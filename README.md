@@ -17,9 +17,10 @@ git clone https://github.com/TobiasCoding/focused-subscriber-emails-by-topic.git
 ```bash
 cd focused-subscriber-emails-by-topic
 ```
-3. Crear cuenta en Yandex y obtener API KEY.
-4. Crear cuenta en Brevo y obtener API KEY.
-5. Modificar el código de `main.py` para definir tu correo y API KEYs obtenidas.
+3. Suscribirte a las noticias de Google en [Google Alerts]("https://www.google.com/alerts?source=alertsmail")
+4. Crear cuenta en Yandex y obtener API KEY. Seguir la guía de [Yandex app API KEY]("https://yandex.com/support/id/en/authorization/app-passwords.html")
+5. Crear cuenta en Brevo y obtener API KEY. Seguir la guía de [Brevo API KEY]("https://developers.brevo.com/docs/getting-started")
+6. Modificar el código de `main.py` para definir tu correo y API KEYs obtenidas.
 ```bash
 nano main.py
 ```
@@ -35,3 +36,8 @@ python main.py
    - Enviar correos electorales o no electorales.
    - Enviar a destinatarios específicos o hacer pruebas.
 **Envío de Correos**: Tras seleccionar las opciones, los correos se enviarán automáticamente según los destinatarios y categorías configuradas.
+
+
+## Ejemplo de correo enviado
+![image](https://github.com/user-attachments/assets/ab944b07-8246-428b-9856-e6226d7d771f)
+

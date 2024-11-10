@@ -28,9 +28,13 @@ nano main.py
 ```
 nano build_databases.py
 ```
-7. Ejecuta el archivo principal (`main.py`).
+7. Crear archivos de bases de datos
 ```bash
-python main.py
+python3 build_databases.py
+```
+9. Ejecuta el archivo principal (`main.py`).
+```bash
+python3 main.py
 ```
 **Selección de Opciones**: Durante la ejecución, podrás elegir opciones como:
    - Enviar correos electorales o no electorales.

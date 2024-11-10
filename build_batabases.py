@@ -9,6 +9,7 @@ if not os.path.isdir('/content/drive/My Drive'):
 
 !mkdir -p '/content/drive/My Drive/envio_de_mails'
 
+# Json para almacenar listados de URLs según categoría y luego poder controlar, para evitar reiteraciones
 mails_by_category_path = '/content/drive/My Drive/envio_de_mails/mails_by_category.txt'
 with open(mails_by_category_path, 'w') as file:
     file.write('''

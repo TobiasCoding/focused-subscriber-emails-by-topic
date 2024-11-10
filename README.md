@@ -25,7 +25,7 @@ nano main.py
 ```
 6. Configurar según tus preferencias el archivo `build_databases.py`
 ```
-nano `build_databases.py`
+nano build_databases.py
 ```
 7. Ejecuta el archivo principal (`main.py`).
 ```bash

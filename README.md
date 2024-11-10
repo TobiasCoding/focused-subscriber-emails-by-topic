@@ -1,4 +1,4 @@
-# Envío automático de correos electrónicos focalizados por categoría
+# Envío automático de correos electrónicos a suscriptores, focalizados por categoría
 
 Este proyecto facilita la automatización del envío de correos electrónicos con noticias temáticas a una lista de suscriptores. El código permite procesar y clasificar las noticias obtenidas de las alertas de Google según categorías. En su versión actual, clasifica las noticias en dos grupos: "electoral" y "no electoral". Sin embargo, se planea hacer que el sistema sea más flexible, de manera que el usuario pueda añadir un número indefinido de categorías.
 

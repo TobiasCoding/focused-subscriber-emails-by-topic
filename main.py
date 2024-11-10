@@ -37,7 +37,7 @@ strong_words_path = '/content/drive/My Drive/envio_de_mails/strong_words.txt'
 list_of_strong_words = ast.literal_eval(open(strong_words_path, 'r').read())
 
 # Listas de mails enviados anteriormente
-mails_by_category_path = '/content/drive/My Drive/envio_de_mails/mails_by_category.txt'
+mails_by_category_path = '/content/drive/My Drive/envio_de_mails/mails_by_category.json'
 mails_by_category = json.loads(open(mails_by_category_path, 'r').read())
 
 list_of_previous_electoral_urls = mails_by_category["electoral"]

@@ -9,37 +9,20 @@ El proyecto está diseñado para ejecutarse en Google Colab, permitiendo su uso 
 
 ## Uso
 
-1.  Descargar el repositorio
-```bash
-git clone https://github.com/TobiasCoding/focused-subscriber-emails-by-topic.git
-```
-2. Ingresar al directorio
-```bash
-cd focused-subscriber-emails-by-topic
-```
-3. Suscribirte a las noticias de Google en [Google Alerts](https://www.google.com/alerts?source=alertsmail)
-4. Crear cuenta en Yandex y obtener API KEY. Seguir la guía de [Yandex app API KEY](https://yandex.com/support/id/en/authorization/app-passwords.html)
-5. Crear cuenta en Brevo y obtener API KEY. Seguir la guía de [Brevo API KEY](https://developers.brevo.com/docs/getting-started)
+1. Suscribirte a las noticias de Google en [Google Alerts](https://www.google.com/alerts?source=alertsmail)
+2. Crear cuenta en Yandex y obtener API KEY. Seguir la guía de [Yandex app API KEY](https://yandex.com/support/id/en/authorization/app-passwords.html)
+3. Crear cuenta en Brevo y obtener API KEY. Seguir la guía de [Brevo API KEY](https://developers.brevo.com/docs/getting-started)
+4. Ingresar a [Google Colab](https://colab.research.google.com/) y crear un nuevo notebook
+5. Copiar y pegar y contenido de los archivos `build_databases.py` y `main.py` cada uno en una nueva entrada en el notebook creado.
 6. Modificar el código de `main.py` para definir tu correo y API KEYs obtenidas.
-```bash
-nano main.py
-```
-6. Configurar según tus preferencias el archivo `build_databases.py`
-```
-nano build_databases.py
-```
-7. Crear archivos de bases de datos
-```bash
-python3 build_databases.py
-```
-9. Ejecuta el archivo principal (`main.py`).
-```bash
-python3 main.py
-```
+7. Configurar según tus preferencias el archivo `build_databases.py`
+8. Crear archivos de bases de datos: Ejecutar el código modificado de `build_databases.py`: Click en la porción de código y luego Ctrl + Enter 
+9. Lanzar el programa: Ejecutar el código modificado de `main.py`: Click en la porción de código y luego Ctrl + Enter
+
 **Selección de Opciones**: Durante la ejecución, podrás elegir opciones como:
    - Enviar correos electorales o no electorales.
    - Enviar a destinatarios específicos o hacer pruebas.
-**Envío de Correos**: Tras seleccionar las opciones, los correos se enviarán automáticamente según los destinatarios y categorías configuradas.
+**Envío de Correos**: Tras seleccionar las opciones, los correos se enviarán automáticamente según los destinatarios y categorías configuradas en `build_databases.py`.
 
 
 ## Ejemplo de correo enviado

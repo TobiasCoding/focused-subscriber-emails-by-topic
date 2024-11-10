@@ -22,6 +22,7 @@ El proyecto está diseñado para ejecutarse en Google Colab, permitiendo su uso 
 **Selección de Opciones**: Durante la ejecución, podrás elegir opciones como:
    - Enviar correos electorales o no electorales.
    - Enviar a destinatarios específicos o hacer pruebas.
+
 **Envío de Correos**: Tras seleccionar las opciones, los correos se enviarán automáticamente según los destinatarios y categorías configuradas en `build_databases.py`.
 
 

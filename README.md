@@ -29,3 +29,5 @@ El proyecto está diseñado para ejecutarse en Google Colab, permitiendo su uso 
 ## Ejemplo de correo enviado
 ![image](https://github.com/user-attachments/assets/ab944b07-8246-428b-9856-e6226d7d771f)
 
+---
+Developed by tobiasrimoli@duck.com

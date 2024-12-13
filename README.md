@@ -1,32 +1,46 @@
-# Envío automático de correos electrónicos a suscriptores, focalizados por categoría
+# Automatic sending of emails to subscribers, targeted by category
 
-Este proyecto facilita la automatización del envío de correos electrónicos con noticias temáticas a una lista de suscriptores. El código permite procesar y clasificar las noticias obtenidas de las alertas de Google según categorías. En su versión actual, clasifica las noticias en dos grupos: "electoral" y "no electoral". Sin embargo, se planea hacer que el sistema sea más flexible, de manera que el usuario pueda añadir un número indefinido de categorías.
+This project facilitates the automation of sending emails with thematic news to a list of subscribers. The code allows processing and classifying news obtained from Google alerts according to categories. In its current version, it classifies the news into two groups: "electoral" and "non-electoral". However, it is planned to make the system more flexible, so that the user can add an indefinite number of categories.
 
-Para el envío y procesamiento de los correos, se utiliza una cuenta de Gmail que reenvía automáticamente las noticias a una cuenta de Yandex, desde la cual se accede al correo mediante IMAP para su análisis. Debido a limitaciones en el envío de correos desde Yandex a través de código, se recurre a Brevo como plataforma de distribución de los mails.
+For sending and processing the emails, a Gmail account is used that automatically forwards the news to a Yandex account, from which the email is accessed via IMAP for analysis. Due to limitations in sending emails from Yandex via code, Brevo is used as the email distribution platform.
 
-El proyecto está diseñado para ejecutarse en Google Colab, permitiendo su uso por usuarios en redes corporativas con restricciones administrativas y sin permisos de instalación adicionales.
+The project is designed to run on Google Colab, allowing its use by users on corporate networks with administrative restrictions and without additional installation permissions.
 
+## Usage
 
-## Uso
+1. Subscribe to Google News on [Google Alerts](https://www.google.com/alerts?source=alertsmail).
+2. Create an account on Yandex and get the API KEY. Follow the guide on [Yandex app API KEY](https://yandex.com/support/id/en/authorization/app-passwords.html).
+3. Create an account on Brevo and get the API KEY. Follow the guide on [Brevo API KEY](https://developers.brevo.com/docs/getting-started).
+4. Go to [Google Colab](https://colab.research.google.com/) and create a new notebook.
+5. Copy and paste the following code into a new entry in the created notebook:
+```
+import os, subprocess
+from google.colab import drive
 
-1. Suscribirte a las noticias de Google en [Google Alerts](https://www.google.com/alerts?source=alertsmail)
-2. Crear cuenta en Yandex y obtener API KEY. Seguir la guía de [Yandex app API KEY](https://yandex.com/support/id/en/authorization/app-passwords.html)
-3. Crear cuenta en Brevo y obtener API KEY. Seguir la guía de [Brevo API KEY](https://developers.brevo.com/docs/getting-started)
-4. Ingresar a [Google Colab](https://colab.research.google.com/) y crear un nuevo notebook
-5. Copiar y pegar y contenido de los archivos `build_databases.py` y `main.py` cada uno en una nueva entrada en el notebook creado.
-6. Modificar el código de `main.py` para definir tu correo y API KEYs obtenidas.
-7. Configurar según tus preferencias el archivo `build_databases.py`
-8. Crear archivos de bases de datos: Ejecutar el código modificado de `build_databases.py`: Click en la porción de código y luego Ctrl + Enter 
-9. Lanzar el programa: Ejecutar el código modificado de `main.py`: Click en la porción de código y luego Ctrl + Enter
+project_path = '/content/drive/MyDrive/envio_de_mails/v2.0'
+main_path = os.path.join(project_path, 'main.py')
 
-**Selección de Opciones**: Durante la ejecución, podrás elegir opciones como:
-   - Enviar correos electorales o no electorales.
-   - Enviar a destinatarios específicos o hacer pruebas.
+if not os.path.isdir(project_path):
+    drive.mount(project_path)
+    if not os.path.isfile(main_path):
+      !git clone https://github.com/TobiasCoding/focused-subscriber-emails-by-topic.git $project_path
+      !mv /focused-subscriber-emails-by-topic/* $project_path
+      print("Please, config the keys.json and build_databases.py files")
+else:
+   !python $main_path
+```
+6. Run the code: Click on the code portion and then Ctrl + Enter.
+7. Modify the `keys.json` code to define your email and API KEYs obtained.
+8. Configure the `build_databases.py` file located in the `databases` directory according to your preferences.
+9. Run the code: Click on the code portion and then Ctrl + Enter.
 
-**Envío de Correos**: Tras seleccionar las opciones, los correos se enviarán automáticamente según los destinatarios y categorías configuradas en `build_databases.py`.
+**Option Selection**: During execution, you will be able to choose options such as:
+- Send electoral or non-electoral emails.
+- Send to specific recipients or perform tests.
 
+**Sending Emails**: After selecting the options, the emails will be sent automatically according to the recipients and categories configured in `build_databases.py`.
 
-## Ejemplo de correo enviado
+## Example of an email sent
 ![image](https://github.com/user-attachments/assets/ab944b07-8246-428b-9856-e6226d7d771f)
 
 ---

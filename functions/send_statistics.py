@@ -86,7 +86,7 @@ def send_statistics(users, list_of_previous_electoral_urls, list_of_previous_no_
       sorted_values.append(others_value)
       sorted_keys.append("Otros <2")
 
-  def autopct_function(pct):  # Función personalizada para mostrar porcentajes solo si son mayores al 10%
+  def autopct_function(pct):  # Función personalizada para mostrar porcentajes
       return f'{pct:.2f}%' if pct > min_percent_to_show else ''
 
   fig, ax = plt.subplots()
@@ -123,7 +123,6 @@ def send_statistics(users, list_of_previous_electoral_urls, list_of_previous_no_
       </body>
   </html>
   """
-          # <p style="color: #696969; font-size: 0.9em; text-align: center;">Actualmente hay {num_suscriptores} usuarios suscriptos, pertenecientes a {num_dependencias} dependencias judiciales. Si desea incorporar a una persona o dejar de recibir mails, debería solicitarlo por mail a news.mailing@yandex.com indicando su correo electrónico, nombre, apellido y dependencia.</p>
 
   configuration = sib_api_v3_sdk.Configuration()
 

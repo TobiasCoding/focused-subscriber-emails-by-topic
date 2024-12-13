@@ -14,20 +14,37 @@ The project is designed to run on Google Colab, allowing its use by users on cor
 4. Go to [Google Colab](https://colab.research.google.com/) and create a new notebook.
 5. Copy and paste the following code into a new entry in the created notebook:
 ```
-import os, subprocess
+import os, sys, subprocess
 from google.colab import drive
 
 project_path = '/content/drive/MyDrive/envio_de_mails/v2.0'
 main_path = os.path.join(project_path, 'main.py')
 
-if not os.path.isdir(project_path):
-    drive.mount(project_path)
-    if not os.path.isfile(main_path):
-      !git clone https://github.com/TobiasCoding/focused-subscriber-emails-by-topic.git $project_path
-      !mv /focused-subscriber-emails-by-topic/* $project_path
-      print("Please, config the keys.json and build_databases.py files")
+if not os.path.exists(project_path):
+    os.makedirs(project_path, exist_ok=True)
+
+if not os.path.isdir('/content/drive'):
+    drive.mount('/content/drive')
+
+if not os.path.isfile(main_path):
+    subprocess.run(['git', 'clone', 'https://github.com/TobiasCoding/focused-subscriber-emails-by-topic.git', project_path])
+
+    for file_name in os.listdir(project_path):
+        source = os.path.join(project_path, file_name)
+        destination = os.path.join(project_path, file_name)
+        if os.path.isdir(source):
+            os.rename(source, destination)
+
+    print("Installing dependencies... plase wait")
+    for library in ["pytz", "sib-api-v3-sdk", "matplotlib"]:
+        try:
+            __import__(library)
+        except ImportError:
+            subprocess.check_call([sys.executable, "-m", "pip", "install", library])
+
+    print("Please, config the keys.json and build_databases.py files")
 else:
-   !python $main_path
+    !python $main_path
 ```
 6. Run the code: Click on the code portion and then Ctrl + Enter.
 7. Modify the `keys.json` code to define your email and API KEYs obtained.

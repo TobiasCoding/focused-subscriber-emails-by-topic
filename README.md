@@ -31,7 +31,7 @@ else:
 ```
 6. Run the code: Click on the code portion and then Ctrl + Enter.
 7. Modify the `keys.json` code to define your email and API KEYs obtained.
-8. Configure the `build_databases.py` file located in the `databases` directory according to your preferences.
+8. Configure the `build_databases.py` file located in the `databases` directory according to your preferences. And set your mail address linked with Brevo in `send_mails.py` and `send_statistics.py`.
 9. Run the code: Click on the code portion and then Ctrl + Enter.
 
 **Option Selection**: During execution, you will be able to choose options such as:

@@ -136,13 +136,12 @@ def send_statistics(users, list_of_previous_electoral_urls, list_of_previous_no_
   api_instance = sib_api_v3_sdk.TransactionalEmailsApi(sib_api_v3_sdk.ApiClient(configuration))
 
   for mail, user in users.items():
-    # Código para enviar el correo (basado en tu ejemplo)
     send_smtp_email = sib_api_v3_sdk.SendSmtpEmail(
         to=[{"email": mail, "name": user[0]}],
         headers={"Admin": "unique-id-1234"},
         html_content=html,
-        sender={"name": "Walsh Legal Analytics", "email": "news.mailing@yandex.com"},
-        subject=f"Walsh Legal Analytics: {fecha_hora_buenos_aires}"
+        sender={"name": "Organization name", "email": "mail@organization.com"},    # Set the name and mail of the organization linked with Brevo
+        subject=f"Organization name: {fecha_hora_buenos_aires}"
     )
 
     try:
